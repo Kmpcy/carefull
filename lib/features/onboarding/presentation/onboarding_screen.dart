@@ -1,9 +1,10 @@
+import 'package:carefull/core/widgets/app_button.dart';
 import 'package:carefull/features/onboarding/presentation/widgets/doc_description.dart';
 import 'package:carefull/features/onboarding/presentation/widgets/doc_image_and_text.dart';
 import 'package:carefull/features/onboarding/presentation/widgets/docdoc_row.dart';
-import 'package:carefull/features/onboarding/presentation/widgets/onboarding_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -21,7 +22,12 @@ class OnboardingScreen extends StatelessWidget {
                 DocImageAndText(),
                 DocDescription(),
                 SizedBox(height: 32.h),
-                onboardinButton(),
+                AppButton(
+                  title: "Get Started",
+                  onPressed: () {
+                    context.push("/login");
+                  },
+                ),
               ],
             ),
           ),
