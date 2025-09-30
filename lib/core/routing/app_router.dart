@@ -1,5 +1,5 @@
 
-import 'package:carefull/features/onboarding/logic/presentation/login_screen.dart';
+import 'package:carefull/features/login/presentation/login_screen.dart';
 import 'package:carefull/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
