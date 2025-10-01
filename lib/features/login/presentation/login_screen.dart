@@ -1,8 +1,8 @@
 import 'package:carefull/core/theming/app_text_styles.dart';
 import 'package:carefull/core/widgets/app_button.dart';
-import 'package:carefull/features/login/presentation/widgets/email_and_password.dart';
-import 'package:carefull/features/login/presentation/widgets/sign_up_text.dart';
+ import 'package:carefull/features/login/presentation/widgets/sign_up_text.dart';
 import 'package:carefull/features/login/presentation/widgets/terms_and_condotions_text.dart';
+import 'package:carefull/features/onboarding/presentation/widgets/email_and_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
