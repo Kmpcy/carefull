@@ -1,22 +1,17 @@
 import 'package:carefull/core/theming/app_text_styles.dart';
 import 'package:carefull/core/widgets/app_button.dart';
- import 'package:carefull/features/login/presentation/widgets/sign_up_text.dart';
+import 'package:carefull/features/login/data/models/login_request_body.dart';
+import 'package:carefull/features/login/logic/cubit/login_cubit.dart';
+import 'package:carefull/features/login/presentation/widgets/sign_up_text.dart';
 import 'package:carefull/features/login/presentation/widgets/terms_and_condotions_text.dart';
 import 'package:carefull/features/onboarding/presentation/widgets/email_and_password.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  final formKey = GlobalKey<FormBuilderState>();
-  bool isObscure = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: AppStyles.lightGrey14,
                 ),
                 SizedBox(height: 35.h),
-                EmailAndPassword(formKey: formKey, isObscure: isObscure),
+                EmailAndPassword(),
                 SizedBox(height: 16.h),
                 Align(
                   alignment: Alignment.centerRight,
@@ -47,7 +42,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(height: 40.h),
-                AppButton(title: "Login", onPressed: () {}),
+                AppButton(
+                  title: "Login",
+                  onPressed: () {
+                    if (context
+                        .read<LoginCubit>()
+                        .formKey
+                        .currentState!
+                        .validate()) {
+                      final email = context
+                          .read<LoginCubit>()
+                          .emailController
+                          .text;
+                      final password = context
+                          .read<LoginCubit>()
+                          .passwordController
+                          .text;
+                      context.read<LoginCubit>().emitLogin(
+                        LoginRequestBody(email: email, password: password),
+                      );
+                    }
+                  },
+                ),
                 SizedBox(height: 16.h),
                 TermsAndConditionsText(),
                 SizedBox(height: 40.h),
@@ -60,4 +76,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
- 

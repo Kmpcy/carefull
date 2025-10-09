@@ -35,6 +35,8 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return FormBuilderTextField(
       controller: controller,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+
       decoration: InputDecoration(
         isDense: true,
         contentPadding:

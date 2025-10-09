@@ -1,6 +1,10 @@
-part of 'login_cubit.dart';
-
+import 'package:carefull/features/login/data/models/login_response.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'login_state.freezed.dart';
 @freezed
 class LoginState with _$LoginState {
   const factory LoginState.initial() = _Initial;
+  const factory LoginState.loading() = Loading;
+  const factory LoginState.success(LoginResponse loginResponse) = Success;
+  const factory LoginState.failure(String errormessage) = Failed;
 }
