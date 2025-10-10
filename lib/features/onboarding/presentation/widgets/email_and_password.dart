@@ -41,7 +41,9 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             controller: context.read<LoginCubit>().passwordController,
             hintText: "Password",
             validator: FormBuilderValidators.compose([
-              FormBuilderValidators.required(),
+              FormBuilderValidators.required(
+                errorText: "Password is required",
+              ),
               FormBuilderValidators.hasLowercaseChars(),
               FormBuilderValidators.hasUppercaseChars(),
               FormBuilderValidators.hasSpecialChars(),

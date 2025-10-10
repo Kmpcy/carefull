@@ -1,4 +1,5 @@
 import 'package:carefull/core/di/di.dart';
+import 'package:carefull/features/home/home.dart';
 import 'package:carefull/features/login/logic/cubit/login_cubit.dart';
 import 'package:carefull/features/login/presentation/login_screen.dart';
 import 'package:carefull/features/onboarding/presentation/onboarding_screen.dart';
@@ -23,5 +24,15 @@ final GoRouter router = GoRouter(
         );
       },
     ),
+
+
+GoRoute(
+      path: '/home',
+      builder: (BuildContext context, GoRouterState state) {
+        return const HomeScreen();
+      },
+    ),
+
+
   ],
 );
