@@ -1,4 +1,3 @@
-import 'package:carefull/features/login/data/models/login_response.dart';
 import 'package:carefull/features/login/logic/cubit/login_cubit.dart';
 import 'package:carefull/features/login/logic/cubit/login_state.dart';
 import 'package:flutter/material.dart';

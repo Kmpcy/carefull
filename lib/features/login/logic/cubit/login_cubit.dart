@@ -18,8 +18,9 @@ class LoginCubit extends Cubit<LoginState> {
     emit(LoginState.loading());
     final response = await _loginRepo.login(loginRequestBody);
     response.fold(
-      (loginResponse) => emit(LoginState.success(loginResponse)),
       (failure) => emit(LoginState.failure(failure.errorMessage)),
+            (loginResponse) => emit(LoginState.success(loginResponse)),
+
     );
   }
 }

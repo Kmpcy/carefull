@@ -9,17 +9,17 @@ class LoginRepo {
   final ApiService _apiService;
   LoginRepo(this._apiService);
 
-  Future<Either<LoginResponse, Failures>> login(
+  Future<Either<Failures, LoginResponse>> login(
     LoginRequestBody loginRequestBody,
   ) async {
     try {
       final response = await _apiService.login(loginRequestBody);
-      return Left(response);
+      return Right(response);
     } catch (e) {
       if (e is DioException) {
-        return Right(ServerFailure.fromDioException(e));
+        return Left(ServerFailure.fromDioException(e));
       } else {
-        return Right(ServerFailure(e.toString()));
+        return Left(ServerFailure(e.toString()));
       }
     }
   }
