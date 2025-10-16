@@ -13,6 +13,7 @@ class AppTextFormField extends StatelessWidget {
   final String hintText;
   final bool? isObscureText;
   final Widget? suffixIcon;
+  final TextInputType? keyboardType;
   final Color? backgroundColor;
   final TextEditingController? controller;
   final dynamic validator;
@@ -29,6 +30,7 @@ class AppTextFormField extends StatelessWidget {
     this.backgroundColor,
     this.controller,
     required this.validator,
+    this.keyboardType,
   });
 
   @override
@@ -36,9 +38,10 @@ class AppTextFormField extends StatelessWidget {
     return FormBuilderTextField(
       controller: controller,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-
+      keyboardType: keyboardType ?? TextInputType.text,
       decoration: InputDecoration(
         isDense: true,
+
         contentPadding:
             contentPadding ??
             EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),

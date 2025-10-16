@@ -25,7 +25,7 @@ class OnboardingScreen extends StatelessWidget {
                 AppButton(
                   title: "Get Started",
                   onPressed: () {
-                    context.push("/login");
+                    context.go("/login");
                   },
                 ),
               ],
