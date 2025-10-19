@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'login_state.dart';
+part of 'sign_up_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'login_state.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$LoginState {
+mixin _$SignUpState {
 
 
 
@@ -20,7 +20,7 @@ mixin _$LoginState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUpState);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'LoginState()';
+  return 'SignUpState()';
 }
 
 
 }
 
 /// @nodoc
-class $LoginStateCopyWith<$Res>  {
-$LoginStateCopyWith(LoginState _, $Res Function(LoginState) __);
+class $SignUpStateCopyWith<$Res>  {
+$SignUpStateCopyWith(SignUpState _, $Res Function(SignUpState) __);
 }
 
 
-/// Adds pattern-matching-related methods to [LoginState].
-extension LoginStatePatterns on LoginState {
+/// Adds pattern-matching-related methods to [SignUpState].
+extension SignUpStatePatterns on SignUpState {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -128,12 +128,12 @@ return failure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( LoginResponse loginResponse)?  success,TResult Function( String errormessage)?  failure,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( SignUpResponse signUpResponse)?  success,TResult Function( String errormessage)?  failure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case Loading() when loading != null:
 return loading();case Success() when success != null:
-return success(_that.loginResponse);case Failed() when failure != null:
+return success(_that.signUpResponse);case Failed() when failure != null:
 return failure(_that.errormessage);case _:
   return orElse();
 
@@ -152,12 +152,12 @@ return failure(_that.errormessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( LoginResponse loginResponse)  success,required TResult Function( String errormessage)  failure,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( SignUpResponse signUpResponse)  success,required TResult Function( String errormessage)  failure,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case Loading():
 return loading();case Success():
-return success(_that.loginResponse);case Failed():
+return success(_that.signUpResponse);case Failed():
 return failure(_that.errormessage);case _:
   throw StateError('Unexpected subclass');
 
@@ -175,12 +175,12 @@ return failure(_that.errormessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( LoginResponse loginResponse)?  success,TResult? Function( String errormessage)?  failure,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( SignUpResponse signUpResponse)?  success,TResult? Function( String errormessage)?  failure,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case Loading() when loading != null:
 return loading();case Success() when success != null:
-return success(_that.loginResponse);case Failed() when failure != null:
+return success(_that.signUpResponse);case Failed() when failure != null:
 return failure(_that.errormessage);case _:
   return null;
 
@@ -192,7 +192,7 @@ return failure(_that.errormessage);case _:
 /// @nodoc
 
 
-class _Initial implements LoginState {
+class _Initial implements SignUpState {
   const _Initial();
   
 
@@ -212,7 +212,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'LoginState.initial()';
+  return 'SignUpState.initial()';
 }
 
 
@@ -224,7 +224,7 @@ String toString() {
 /// @nodoc
 
 
-class Loading implements LoginState {
+class Loading implements SignUpState {
   const Loading();
   
 
@@ -244,7 +244,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'LoginState.loading()';
+  return 'SignUpState.loading()';
 }
 
 
@@ -256,13 +256,13 @@ String toString() {
 /// @nodoc
 
 
-class Success implements LoginState {
-  const Success(this.loginResponse);
+class Success implements SignUpState {
+  const Success(this.signUpResponse);
   
 
- final  LoginResponse loginResponse;
+ final  SignUpResponse signUpResponse;
 
-/// Create a copy of LoginState
+/// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -272,27 +272,27 @@ $SuccessCopyWith<Success> get copyWith => _$SuccessCopyWithImpl<Success>(this, _
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Success&&(identical(other.loginResponse, loginResponse) || other.loginResponse == loginResponse));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Success&&(identical(other.signUpResponse, signUpResponse) || other.signUpResponse == signUpResponse));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,loginResponse);
+int get hashCode => Object.hash(runtimeType,signUpResponse);
 
 @override
 String toString() {
-  return 'LoginState.success(loginResponse: $loginResponse)';
+  return 'SignUpState.success(signUpResponse: $signUpResponse)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $SuccessCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
+abstract mixin class $SuccessCopyWith<$Res> implements $SignUpStateCopyWith<$Res> {
   factory $SuccessCopyWith(Success value, $Res Function(Success) _then) = _$SuccessCopyWithImpl;
 @useResult
 $Res call({
- LoginResponse loginResponse
+ SignUpResponse signUpResponse
 });
 
 
@@ -307,12 +307,12 @@ class _$SuccessCopyWithImpl<$Res>
   final Success _self;
   final $Res Function(Success) _then;
 
-/// Create a copy of LoginState
+/// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? loginResponse = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? signUpResponse = null,}) {
   return _then(Success(
-null == loginResponse ? _self.loginResponse : loginResponse // ignore: cast_nullable_to_non_nullable
-as LoginResponse,
+null == signUpResponse ? _self.signUpResponse : signUpResponse // ignore: cast_nullable_to_non_nullable
+as SignUpResponse,
   ));
 }
 
@@ -322,13 +322,13 @@ as LoginResponse,
 /// @nodoc
 
 
-class Failed implements LoginState {
+class Failed implements SignUpState {
   const Failed(this.errormessage);
   
 
  final  String errormessage;
 
-/// Create a copy of LoginState
+/// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -347,14 +347,14 @@ int get hashCode => Object.hash(runtimeType,errormessage);
 
 @override
 String toString() {
-  return 'LoginState.failure(errormessage: $errormessage)';
+  return 'SignUpState.failure(errormessage: $errormessage)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $FailedCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
+abstract mixin class $FailedCopyWith<$Res> implements $SignUpStateCopyWith<$Res> {
   factory $FailedCopyWith(Failed value, $Res Function(Failed) _then) = _$FailedCopyWithImpl;
 @useResult
 $Res call({
@@ -373,7 +373,7 @@ class _$FailedCopyWithImpl<$Res>
   final Failed _self;
   final $Res Function(Failed) _then;
 
-/// Create a copy of LoginState
+/// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? errormessage = null,}) {
   return _then(Failed(
