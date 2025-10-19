@@ -3,6 +3,8 @@ import 'package:carefull/features/home/home.dart';
 import 'package:carefull/features/login/logic/cubit/login_cubit.dart';
 import 'package:carefull/features/login/presentation/login_screen.dart';
 import 'package:carefull/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:carefull/features/signUp/logic/cubit/sign_up_cubit.dart';
+import 'package:carefull/features/signUp/presentation/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -25,14 +27,20 @@ final GoRouter router = GoRouter(
       },
     ),
 
-
-GoRoute(
+    GoRoute(
       path: '/home',
       builder: (BuildContext context, GoRouterState state) {
         return const HomeScreen();
       },
     ),
-
-
+    GoRoute(
+      path: '/signUp',
+      builder: (BuildContext context, GoRouterState state) {
+        return BlocProvider(
+          create: (context) => getIt<SignUpCubit>(),
+          child: SignUp(),
+        );
+      },
+    ),
   ],
 );

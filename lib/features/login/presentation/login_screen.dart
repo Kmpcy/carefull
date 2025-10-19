@@ -2,13 +2,14 @@ import 'package:carefull/core/theming/app_text_styles.dart';
 import 'package:carefull/core/widgets/app_button.dart';
 import 'package:carefull/features/login/data/models/login_request_body.dart';
 import 'package:carefull/features/login/logic/cubit/login_cubit.dart';
-import 'package:carefull/features/login/presentation/widgets/sign_up_text.dart';
+import 'package:carefull/features/login/presentation/widgets/login_and_listner.dart';
+import 'package:carefull/features/login/presentation/widgets/bottom_text.dart';
 import 'package:carefull/features/login/presentation/widgets/terms_and_condotions_text.dart';
-import 'package:carefull/features/onboarding/presentation/widgets/email_and_password.dart';
-import 'package:carefull/features/onboarding/presentation/widgets/login_and_listner.dart';
+import 'package:carefull/features/login/presentation/widgets/email_and_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -33,6 +34,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 35.h),
                 EmailAndPassword(),
+
                 SizedBox(height: 16.h),
                 Align(
                   alignment: Alignment.centerRight,
@@ -65,10 +67,17 @@ class LoginScreen extends StatelessWidget {
                   },
                 ),
                 SizedBox(height: 16.h),
-               const TermsAndConditionsText(),
+                const TermsAndConditionsText(),
                 SizedBox(height: 40.h),
-               const Center(child: SignUpText()),
-              const LoginAndListner(),
+                Center(
+                  child: InkWell(
+                    onTap: () {
+                      context.push("/signUp");
+                    },
+                    child: BottomText(title: "Sign Up"),
+                  ),
+                ),
+                const LoginAndListner(),
               ],
             ),
           ),

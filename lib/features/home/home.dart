@@ -6,7 +6,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text("This is Hoooooooooooooome Page!!!!!!!!!!"),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(child: Text("This is Hoooooooooooooome Page!!!!!!!!!!")),
+        ],
+      ),
     );
   }
 }
