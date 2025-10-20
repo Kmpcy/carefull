@@ -29,24 +29,24 @@ android {
         versionName = flutter.versionName
     }
 
- flavorDimensions += "default"
-    productFlavors {
-        create("development") {
-            dimension = "default"
-            resValue(
-                type = "string",
-                name = "app_name",
-                value = "CareFull development")
-            applicationIdSuffix = ".dev"
-        }
-        create("production") {
-            dimension = "default"
-            resValue(
-                type = "string",
-                name = "app_name",
-                value = "CareFull prod")
-            applicationIdSuffix = ".production"
-        }
+flavorDimensions("default")
+productFlavors {
+    create("development") {
+        dimension = "default"
+        resValue(
+            type = "string",
+            name = "app_name",
+            value = "CareFull development")
+        applicationIdSuffix = ".dev"
+    }
+    create("production") {
+        dimension = "default"
+        resValue(
+            type = "string",
+            name = "app_name",
+            value = "CareFull prod")
+        applicationIdSuffix = ".production"
+    }
 
 
 
