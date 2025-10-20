@@ -13,7 +13,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
+}
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
@@ -28,6 +28,29 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
+
+ flavorDimensions += "default"
+    productFlavors {
+        create("development") {
+            dimension = "default"
+            resValue(
+                type = "string",
+                name = "app_name",
+                value = "CareFull development")
+            applicationIdSuffix = ".dev"
+        }
+        create("production") {
+            dimension = "default"
+            resValue(
+                type = "string",
+                name = "app_name",
+                value = "CareFull prod")
+            applicationIdSuffix = ".production"
+        }
+
+
+
+
 
     buildTypes {
         release {
