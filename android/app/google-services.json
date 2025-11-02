@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "770602198487",
+    "project_id": "carefull-b40bc",
+    "storage_bucket": "carefull-b40bc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770602198487:android:5688853f616294e4095792",
+        "android_client_info": {
+          "package_name": "com.example.carefull"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrRXR0m9NIYGlbyrKDOn0mYd_C3uRjVtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
