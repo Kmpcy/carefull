@@ -9,6 +9,9 @@ void main() async{
   setup();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+
+
+    
 );
   await ScreenUtil.ensureScreenSize();
   runApp(const CarefullApp());
